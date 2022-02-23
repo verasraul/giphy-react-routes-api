@@ -3,7 +3,7 @@ import axios from "axios";
 
 
 export async function Constants(){
-    const Result = await axios.get('https://api.giphy.com/v1/gifs/random?api_key=HGm6K3GnPZQ1KJe8J6iZzSOAQgFvHzJM&tag=&rating=g')
+    const Result = await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${RANDOM_API_KEY}&tag=&rating=g`)
     .then(({ data }) => {
         return data;
       });
@@ -12,7 +12,7 @@ export async function Constants(){
 }
 
 export async function Search(searchterm){
-    const SearchResult = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=sX3CW8Svagrh96ijxstWvyCVK16QCGxa&q=${searchterm}&limit=25&offset=0&rating=g&lang=en`)
+    const SearchResult = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=${SEARCH_API_KEY}&q=${searchterm}&limit=25&offset=0&rating=g&lang=en`)
     .then(({ data }) => {
         return data;
       });
